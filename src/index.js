@@ -1,7 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const authRouter = require('./routes/authRoutes')
 
 const app =  express();
+
+app.use(authRouter)
 
 const mongoUri = 'mongodb+srv://admin:passwordpassword@cluster0.d2alo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 mongoose.connect(mongoUri, {
